@@ -1,0 +1,16 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8080/realms/dev/protocol/openid-connect/certs
+          issuer-uri: http://localhost:8080/realms/dev
+          jws-algorithm: RS512
+
+server:
+  port: 9191
+
+logging.level:
+  org.springframework.cloud.gateway: DEBUG
+  org.springframework.security: DEBUG
+  org.springframework.web.reactive.function.client: TRACE
